@@ -1,9 +1,7 @@
 // ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls
 
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:shop_app/models/categories_model.dart';
 import 'package:shop_app/models/change_favorites_model.dart';
 import 'package:shop_app/models/home_model.dart';
@@ -22,6 +20,7 @@ class ShopCubit extends Cubit<ShopState> {
   ShopCubit() : super(ShopInitialState());
 
   static ShopCubit get(context) => BlocProvider.of(context);
+
   int currentIndex = 0;
 
   List<Widget> bottomScreens = [

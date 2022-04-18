@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/layout/shop_app/cubit/shop_cubit.dart';
-import 'package:shop_app/modules/search_screen.dart';
-import 'package:shop_app/shared/components.dart';
+import 'cubit/shop_cubit.dart';
+import '../../modules/search_screen.dart';
+import '../../shared/components.dart';
+import '../../shared/constants.dart';
 
 class ShopLayout extends StatelessWidget {
   const ShopLayout({Key? key}) : super(key: key);
@@ -18,12 +19,21 @@ class ShopLayout extends StatelessWidget {
           appBar: AppBar(
             actions: [
               IconButton(
-                  onPressed: () {
-                    navigateTo(context, const SearchScreen());
-                  },
-                  icon: const Icon(
-                    Icons.search_outlined,
-                  )),
+                onPressed: () {
+                  navigateTo(context, const SearchScreen());
+                },
+                icon: const Icon(
+                  Icons.search_outlined,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  signOut(context);
+                },
+                icon: const Icon(
+                  Icons.exit_to_app_outlined,
+                ),
+              ),
             ],
             title: const Text(
               'Salla',

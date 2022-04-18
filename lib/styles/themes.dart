@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:shop_app/styles/colors.dart';
+import 'colors.dart';
 
 ThemeData darkTheme = ThemeData(
   primarySwatch: Colors.deepOrange,

@@ -1,7 +1,5 @@
 // ignore_for_file: avoid_print, duplicate_ignore
 
-import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/models/login_model.dart';
@@ -13,7 +11,10 @@ part 'shop_login_state.dart';
 class ShopLoginCubit extends Cubit<ShopLoginState> {
   ShopLoginCubit() : super(ShopLoginInitialState());
 
+  // object to use cubit in another place
+
   static ShopLoginCubit get(context) => BlocProvider.of(context);
+
   ShopLogingModel? logingModel;
 
   void userLogin({
@@ -45,7 +46,9 @@ class ShopLoginCubit extends Cubit<ShopLoginState> {
   }
 
   IconData suffix = Icons.visibility_outlined;
+
   bool isPassword = true;
+
   void changePasswordVisibility() {
     isPassword = !isPassword;
     suffix =

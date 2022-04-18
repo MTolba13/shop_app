@@ -26,7 +26,10 @@ class DioHelper {
       'Authorization': token ?? '',
       'Content-Type': 'application/json'
     };
-    return response = await dio.get(url, queryParameters: query);
+    return response = await dio.get(
+      url,
+      queryParameters: query,
+    );
   }
 
   static Future<Response> post({
@@ -40,6 +43,9 @@ class DioHelper {
       'Authorization': token ?? '',
       'Content-Type': 'application/json'
     };
-    return response = await dio.post(url, data: data);
+    return response = await dio.post(
+      url,
+      data: data,
+    );
   }
 }

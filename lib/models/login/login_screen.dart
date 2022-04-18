@@ -38,6 +38,7 @@ class LoginScreen extends StatelessWidget {
               print(state.logingModel.message);
               showToast(
                 text: state.logingModel.message.toString(),
+                
               );
             }
           }
@@ -112,6 +113,7 @@ class LoginScreen extends StatelessWidget {
                               return 'please enter your Password';
                             }
                           },
+                          
                         ),
                         const SizedBox(
                           height: 25,
@@ -133,8 +135,9 @@ class LoginScreen extends StatelessWidget {
                             child: const Text('LOGIN'),
                           ),
                           condition: state is! ShopLoginLoadingState,
-                          fallback: (context) =>
-                              const Center(child: CircularProgressIndicator()),
+                          fallback: (context) => const Center(
+                            child: CircularProgressIndicator(),
+                          ),
                         ),
                         const SizedBox(
                           height: 25,

@@ -16,18 +16,14 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ShopCubit, ShopState>(
       listener: (context, state) {
-        if (state is ShopSuccessUserDataState) {
-          nameController.text = state.logingModel.data.name;
-          emailController.text = state.logingModel.data.email;
-          phoneController.text = state.logingModel.data.phone;
-        }
+        
       },
       builder: (context, state) {
-        var cubit = ShopCubit.get(context).userModel;
+        var model = ShopCubit.get(context).userModel;
 
-        nameController.text = cubit!.data.name;
-        emailController.text = cubit.data.email;
-        phoneController.text = cubit.data.phone;
+        nameController.text = model!.data!.name!;
+        emailController.text = model.data!.email!;
+        phoneController.text = model.data!.phone!;
 
         return ConditionalBuilder(
           builder: (context) => Padding(
@@ -37,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
                 defaultFormField(
                   controller: nameController,
                   type: TextInputType.name,
-                  label: cubit.data.name,
+                  label: model.data!.name!,
                   prefix: Icons.person,
                   validate: (String value) {
                     if (value.isEmpty) {
@@ -51,7 +47,7 @@ class SettingsScreen extends StatelessWidget {
                 defaultFormField(
                   controller: emailController,
                   type: TextInputType.emailAddress,
-                  label: cubit.data.email,
+                  label: model.data!.email!,
                   prefix: Icons.email,
                   validate: (String value) {
                     if (value.isEmpty) {
@@ -65,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
                 defaultFormField(
                   controller: phoneController,
                   type: TextInputType.phone,
-                  label: cubit.data.phone,
+                  label: model.data!.phone!,
                   prefix: Icons.phone,
                   validate: (String value) {
                     if (value.isEmpty) {

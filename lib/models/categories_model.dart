@@ -1,10 +1,9 @@
 // ignore_for_file: non_constant_identifier_names
 
-
 class CategoriesModel {
   late bool status;
+  late CategoriesDataModel data;
 
-  late CategoriesDataModel data ;
   CategoriesModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     data = CategoriesDataModel.fromJson(json['data']);
@@ -13,7 +12,8 @@ class CategoriesModel {
 
 class CategoriesDataModel {
   late int current_page;
-  late List<DataModel> data =[] ;
+  late List<DataModel> data = [];
+
   CategoriesDataModel.fromJson(Map<String, dynamic> json) {
     current_page = json['current_page'];
     json['data'].forEach((element) {

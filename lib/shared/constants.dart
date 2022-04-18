@@ -1,6 +1,6 @@
-import 'package:shop_app/models/login/login_screen.dart';
-import 'package:shop_app/network/local/cache_helper.dart';
-import 'package:shop_app/shared/components.dart';
+import '../models/login/login_screen.dart';
+import '../network/local/cache_helper.dart';
+import 'components.dart';
 
 void signOut(context) {
   CacheHelper.removeData(key: 'token').then((value) {
