@@ -21,9 +21,9 @@ class SettingsScreen extends StatelessWidget {
       builder: (context, state) {
         var model = ShopCubit.get(context).userModel;
 
-        nameController.text = model!.data!.name!;
-        emailController.text = model.data!.email!;
-        phoneController.text = model.data!.phone!;
+        nameController.text = model!.data.name;
+        emailController.text = model.data.email;
+        phoneController.text = model.data.phone;
 
         return ConditionalBuilder(
           builder: (context) => Padding(
@@ -33,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
                 defaultFormField(
                   controller: nameController,
                   type: TextInputType.name,
-                  label: model.data!.name!,
+                  label: model.data.name,
                   prefix: Icons.person,
                   validate: (String value) {
                     if (value.isEmpty) {
@@ -47,7 +47,7 @@ class SettingsScreen extends StatelessWidget {
                 defaultFormField(
                   controller: emailController,
                   type: TextInputType.emailAddress,
-                  label: model.data!.email!,
+                  label: model.data.email,
                   prefix: Icons.email,
                   validate: (String value) {
                     if (value.isEmpty) {
@@ -61,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
                 defaultFormField(
                   controller: phoneController,
                   type: TextInputType.phone,
-                  label: model.data!.phone!,
+                  label: model.data.phone,
                   prefix: Icons.phone,
                   validate: (String value) {
                     if (value.isEmpty) {
